@@ -1,0 +1,55 @@
+1:
+int main()
+{
+    for(int i=1;i<=4;i++)
+    {
+        for(int j=1;j<=4;j++)
+        if(i>=j)
+        {
+            cout<<i;
+        }
+        else
+        {
+            cout<<" ";
+        }
+        cout<<"\n";
+    }
+    
+}
+op:
+1
+22
+333
+4444
+---------------------------------------------------------------------------------------
+2:
+int main()
+{
+    for(int i=0;i<=6;i++)
+    {
+        for(int j=1;j<i;j++)
+        if((i+j)%2==0)
+        {
+            cout<<"0";
+        }
+        else
+        {
+            cout<<"1";
+        }
+        cout<<"\n";
+    }
+    
+}
+op:
+1
+01
+101
+0101
+10101
+--------------------------------------------------------------------
+3:
+Arrays and pointers are synonymous in terms of how they use to access memory but the
+important difference between them is that, a pointer variable can take different
+addresses as value whereas, in case of array it is fixed.
+In C , name of the array always points to the first element of an array.
+
