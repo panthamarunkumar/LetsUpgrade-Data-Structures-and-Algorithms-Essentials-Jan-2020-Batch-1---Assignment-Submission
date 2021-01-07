@@ -1,0 +1,95 @@
+#include <iostream>
+
+using namespace std;
+int del_begin(int a[],int n)
+{
+     for(int i=1;i<n;i++)
+    {
+        a[i-1]=a[i];
+    }
+   
+    cout<<"\n ARRAY AFTER DELETION FROM FRONT:";
+    for(int i=0;i<n-1;i++)
+    {
+        cout<<a[i]<<" ";
+    }
+    
+}
+int del_anypos(int a[],int n,int pos)
+{
+    for(int i=pos-1;i<n;i++)
+    {
+        a[i]=a[i+1];
+    }
+    cout<<"\n ARRAY AFTER DELETION FROM any pos:";
+    for(int i=0;i<n-1;i++)
+    {
+        cout<<a[i]<<" ";
+    }
+}
+
+int main()
+{
+    int choice;
+    cout<<"\n ENTER UR CHOICE:\t1:front del\t2:del form_pos";
+    cin>>choice;
+    int a[10];
+    int n;
+    cout<<"\nENTER THE NO OF ELEMENTS:";
+    cin>>n;
+    
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    switch(choice)
+    {
+        
+    case 1:
+           del_begin(a,n);
+           break;
+    case 2:
+            int pos;
+            cout<<"\npos to del:";
+              cin>>pos;
+           del_anypos(a,n,pos);
+           break;
+   
+}
+}
+--------------------------------------------------------------------------------
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout<<"\n enter n:";
+    int n;
+    cin>>n;
+    
+    int a[10];
+    
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    
+    int k;
+    cin>>k;
+    while(k--)
+    {
+        int i;
+        int temp=a[0];
+        for(i=0;i<n-1;i++)
+        {
+            a[i]=a[i+1];
+        }
+        a[i]=temp;
+    }
+    for(int i=0;i<n;i++)
+    {
+        cout<<a[i];
+    }
+}
+
