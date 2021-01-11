@@ -1,0 +1,161 @@
+1:#include <iostream>
+using namespace std;
+int insertionsort(int arr[],int n)
+{
+    for(int i=1;i<n;i++)
+    {
+        int temp=arr[i];
+        int j=i-1;
+        while(j>=0&&arr[j]>temp)
+        {
+            arr[j+1]=arr[j];
+            j--;
+        }
+        arr[j+1]=temp;
+    }
+    for(int i=0;i<n;i++)
+    {
+       cout<<arr[i]<<" ";
+    }
+}
+
+int main()
+{
+   int arr[]={44,2,9,4,1,9,2,3};
+   int len=sizeof(arr)/sizeof(arr[0]);
+   insertionsort(arr,len);
+}
+OP:1 2 2 3 4 9 9 44'
+_____________________________________________________________________________________________________________________________________
+2:
+#include <iostream>
+using namespace std;
+#define MAX 10
+
+int stack[MAX],max_stack[MAX];
+int top,max_top=-1;
+ 
+ int push_max(int m)
+  {
+    if(max_top==MAX-1)
+    {
+        cout<<"over";
+    }
+    else
+    {
+        max_stack[max_top]=m;
+        
+    }
+}
+int push(int data)
+{
+    if(top==MAX-1)
+    {
+        cout<<"over flow";
+    }
+    else
+    {
+        top++;
+        stack[top]=data;
+    }
+           if(max_top==-1||stack[top]>=max_stack[max_top])
+           {
+                max_top++;
+               push_max(stack[top]);
+              }
+             else
+                 {
+                int temp=max_stack[max_top];
+                max_top++;
+                push_max(temp);
+                   }
+               
+           
+    
+}
+int main()
+{
+ 
+
+   push(10);
+     push(18);
+      push(6);
+       push(1);
+       push(3);
+       push(0);
+      
+         
+         
+             cout<<"  "<<max_stack[max_top]<<" ";
+         
+}
+
+
+
+
+________________________________________________________________________________________________________________________________-
+3:
+#include <iostream>
+//using namespace std;
+
+using namespace std;
+#define MAX 10
+
+int stack[MAX],min_stack[MAX];
+int top,min_top=-1;
+ 
+ int push_min(int m)
+  {
+    if(min_top==MAX-1)
+    {
+        cout<<"over";
+    }
+    else
+    {
+        min_stack[min_top]=m;
+        
+    }
+}
+int push(int data)
+{
+    if(top==MAX-1)
+    {
+        cout<<"over flow";
+    }
+    else
+    {
+        top++;
+        stack[top]=data;
+    }
+           if(min_top==-1||stack[top]<=min_stack[min_top])
+           {
+                min_top++;
+               push_min(stack[top]);
+              }
+             else
+                 {
+                int temp=min_stack[min_top];
+                min_top++;
+                push_min(temp);
+                   }
+               
+           
+    
+}
+int main()
+{
+ 
+
+   push(10);
+     push(18);
+      push(6);
+       push(1);
+       push(3);
+       push(0);
+      
+         
+         
+             cout<<"  "<<min_stack[min_top]<<" ";
+         
+}
+0P; 0
